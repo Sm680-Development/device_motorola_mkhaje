@@ -1,0 +1,31 @@
+on init && property:ro.boot.device=hawao
+   setprop ro.surface_flinger.set_idle_timer_ms=0
+   setprop ro.surface_flinger.set_touch_timer_ms=0
+   setprop ro.vendor.radio.imei.sv=7
+
+on fs && property:ro.boot.device=hawao
+   # Majority of MMI DLKMs should be in this group
+   setprop vendor.mmi_init.stage common
+   insmod /vendor/lib/modules/sensors_class.ko
+   #zram wb
+   mount_all /vendor/etc/fstab.qcom.zram --early
+   exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules adapter_class mmi_relay touchscreen_mmi focaltech_v2_mmi regulator_vibrator_mmi leds-indicator-pwm audio_snd_soc_aw882xx aw9610x
+
+on charger && && property:ro.boot.device=hawao
+   insmod /vendor/lib/modules/cw2217b_fg_mmi.ko
+   insmod /vendor/lib/modules/sm5602_fg_mmi.ko
+   insmod /vendor/lib/modules/mmi_charger.ko
+   insmod /vendor/lib/modules/adapter_class.ko
+   insmod /vendor/lib/modules/mmi_discrete_charger_class.ko
+   insmod /vendor/lib/modules/mmi_discrete_charger.ko
+   insmod /vendor/lib/modules/sgm4154x_charger.ko
+   insmod /vendor/lib/modules/bq2589x_charger.ko
+   insmod /vendor/lib/modules/tcpc_class.ko
+   insmod /vendor/lib/modules/tcpc_sgm7220.ko
+
+on post-fs && && property:ro.boot.device=hawao
+   # "Tap to wake" gesture
+   chown root input /sys/class/sensors/dt-gesture/enable
+   chmod 0660 /sys/class/sensors/dt-gesture/enable
+   chown root input /sys/class/sensors/dt-gesture/poll_delay
+   chmod 0660 /sys/class/sensors/dt-gesture/poll_delay

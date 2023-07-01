@@ -1,4 +1,4 @@
-Device tree configuration for Motorola Moto G52
+Device tree configuration for Motorola Moto Khaje devices [Moto G32, Moto G42 & Moto G52]
 
 
 ```

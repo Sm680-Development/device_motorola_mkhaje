@@ -1,0 +1,40 @@
+# Camera
+vendor/lib64/camera/com.mot.eeprom.mot_gt24p64b_hi1634q_eeprom.so
+vendor/lib64/camera/com.mot.eeprom.mot_hawao_gc02m1_otp.so
+vendor/lib64/camera/com.qti.flash.aw36514.so
+vendor/lib64/camera/com.qti.flash.ocp81373.so
+vendor/lib64/camera/com.qti.sensor.mot_hi1634q.so
+vendor/lib64/camera/com.qti.sensormodule.mot_hawao_gc02m1_sunwin.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_hawao_hi1634q_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_hawao_s5k4h7_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_hawao_s5kjn1_qtech.bin
+vendor/lib64/camera/com.qti.tuned.mot_hawao_gc02m1.bin
+vendor/lib64/camera/com.qti.tuned.mot_hawao_hi1634q.bin
+vendor/lib64/camera/com.qti.tuned.mot_hawao_hi1634q_pnl.bin
+vendor/lib64/camera/com.qti.tuned.mot_hawao_s5k4h7.bin
+vendor/lib64/camera/com.qti.tuned.mot_hawao_s5kjn1.bin
+vendor/lib64/camera/components/com.mot.node.dc_capture.so
+vendor/lib64/camera/components/com.mot.node.dc_preview.so
+
+# Display (Calibration Data)
+vendor/etc/qdcm_calib_data_mipi_mot_vid_edosd_1080p_643.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_edovtdr_1080p_643.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_visionox_1080p_643.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_visionoxrm_1080p_643.xml
+
+# Fingerprint
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-chipone
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-chipone2.rc
+vendor/lib64/hw/chipone.fingerprint.default.so
+
+# Sensor-configs
+vendor/etc/sensors/config/ginum_qmc6308_0.json
+
+# Thermal
+vendor/etc/thermal-engine-hawao.conf
+
+# Touchscreen firmware
+vendor/firmware/focaltech-edosd-ft3519-72-0000-hawao.bin
+vendor/firmware/focaltech-edovtdr-ft3519-63-0000-hawao.bin
+vendor/firmware/focaltech-visionox-ft3519-88-0000-hawao.bin
+vendor/firmware/focaltech-visionoxrm-ft3519-93-0000-hawao.bin

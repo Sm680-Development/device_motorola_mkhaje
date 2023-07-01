@@ -1,0 +1,69 @@
+on init && property:ro.boot.device=devon
+   setprop ro.surface_flinger.set_idle_timer_ms=500
+   setprop ro.surface_flinger.set_touch_timer_ms=2000
+   setprop ro.surface_flinger.use_smart_90_for_video=true
+   setprop ro.vendor.radio.imei.sv=10
+   setprop vendor.false_touch_quality=26
+
+on fs && && property:ro.boot.device=devon
+   # Majority of MMI DLKMs should be in this group
+   setprop vendor.mmi_init.stage common
+   insmod /vendor/lib/modules/adapter_class.ko
+   insmod /vendor/lib/modules/mmi_qc3p_wt6670f.ko
+   insmod /vendor/lib/modules/mmi_charger.ko
+   insmod /vendor/lib/modules/mmi_discrete_charger_class.ko
+   insmod /vendor/lib/modules/mmi_discrete_charger.ko
+   insmod /vendor/lib/modules/sgm4154x_charger.ko
+   insmod /vendor/lib/modules/rt9471_charger.ko
+   insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
+   insmod /vendor/lib/modules/tcpc_class.ko
+   insmod /vendor/lib/modules/cw2217b_fg_mmi.ko
+   insmod /vendor/lib/modules/sm5602_fg_mmi.ko
+   insmod /vendor/lib/modules/bq2597x_mmi_iio.ko
+   insmod /vendor/lib/modules/mmi_discrete_turbo_charger.ko
+   insmod /vendor/lib/modules/tcpc_sgm7220.ko
+   insmod /vendor/lib/modules/rt_pd_manager.ko
+   insmod /vendor/lib/modules/sensors_class.ko
+   insmod /vendor/lib/modules/leds_aw99703.ko
+   insmod /vendor/lib/modules/leds_lm3697.ko
+   insmod /vendor/lib/modules/st21nfc.ko
+
+   insmod /vendor/lib/modules/nova_0flash_mmi.ko
+   insmod /vendor/lib/modules/ili9882_mmi.ko
+   insmod /vendor/lib/modules/focaltech_0flash_v2_mmi.ko
+   insmod /vendor/lib/modules/ldo_vibrator_mmi.ko
+   insmod /vendor/lib/modules/leds-indicator-pwm.ko
+   #zram wb
+   mount_all /vendor/etc/fstab.qcom.zram --early
+   exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_snd_soc_aw882xx aw9610x
+
+on charger && && property:ro.boot.device=devon
+   insmod /vendor/lib/modules/adapter_class.ko
+   insmod /vendor/lib/modules/mmi_qc3p_wt6670f.ko
+   insmod /vendor/lib/modules/mmi_discrete_charger.ko
+   insmod /vendor/lib/modules/mmi_charger.ko
+   insmod /vendor/lib/modules/mmi_discrete_charger_class.ko
+   insmod /vendor/lib/modules/sgm4154x_charger.ko
+   insmod /vendor/lib/modules/rt9471_charger.ko
+   insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
+   insmod /vendor/lib/modules/tcpc_class.ko
+   insmod /vendor/lib/modules/cw2217b_fg_mmi.ko
+   insmod /vendor/lib/modules/sm5602_fg_mmi.ko
+   insmod /vendor/lib/modules/bq2597x_mmi_iio.ko
+   insmod /vendor/lib/modules/mmi_discrete_turbo_charger.ko
+   insmod /vendor/lib/modules/tcpc_sgm7220.ko
+
+on post-fs && property:ro.boot.device=devon
+   # "Tap to wake" gesture
+   chown root input /sys/class/sensors/dt-gesture/enable
+   chmod 0660 /sys/class/sensors/dt-gesture/enable
+   chown root input /sys/class/sensors/dt-gesture/poll_delay
+   chmod 0660 /sys/class/sensors/dt-gesture/poll_delay
+
+on boot && property:ro.boot.device=devon
+   #Change ownership and permission of st nfc device
+   chown nfc nfc /dev/st21nfc
+   chmod 0660 /dev/st21nfc
+
+    chown vendor_pwric vendor_pwric /sys/class/power_supply/cp-standalone/force_chg_auto_enable
+    chown vendor_pwric vendor_pwric /proc/driver/wt6670f_firmware_num

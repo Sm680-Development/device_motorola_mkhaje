@@ -1,0 +1,76 @@
+# Camera
+vendor/lib64/camera/com.mot.eeprom.mot_devon_ov02b10_otp.so
+vendor/lib64/camera/com.mot.eeprom.mot_gt24p64b_hi1634q_eeprom.so
+vendor/lib64/camera/com.qti.sensor.mot_hi1634q.so
+vendor/lib64/camera/com.qti.sensor.mot_ov02b10.so
+vendor/lib64/camera/com.qti.sensor.mot_ov02d10.so
+vendor/lib64/camera/com.qti.sensormodule.mot_devon_hi1634q_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_devon_ov02b10_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_devon_ov02d10_sunwin.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_devon_s5k4h7_ofilm.bin
+vendor/lib64/camera/com.qti.sensormodule.mot_devon_s5kjn1_qtech.bin
+vendor/lib64/camera/com.qti.tuned.mot_devon_hi1634q.bin
+vendor/lib64/camera/com.qti.tuned.mot_devon_ov02b10.bin
+vendor/lib64/camera/com.qti.tuned.mot_devon_ov02d10.bin
+vendor/lib64/camera/com.qti.tuned.mot_devon_s5k4h7.bin
+vendor/lib64/camera/com.qti.tuned.mot_devon_s5kjn1.bin
+vendor/lib64/camera/components/com.mot.node.dc_capture.so
+vendor/lib64/camera/components/com.mot.node.dc_preview.so
+vendor/lib64/libBSTSWAD.so
+vendor/lib64/libBSTbase_share.so
+vendor/lib64/libarcsoft_chi_utils.so
+vendor/lib64/libundistort_impl.so
+
+# Camera configs
+vendor/etc/camera/SwadAIMod.bin
+vendor/etc/camera/SwadCalib.bin
+vendor/etc/camera/SwadParamList.txt
+
+# Display (Calibration Data)
+vendor/etc/qdcm_calib_data_mipi_mot_vid_tm_nt36672c_fhdp_649.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_txd_ft8726_fhdp_649.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_txd_ft8726_fhdp_649_v0.xml
+vendor/etc/qdcm_calib_data_mipi_mot_vid_txd_ili7807s_fhdp_649.xml
+
+# Fingerprint
+vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service-fpc
+vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service-fpc2.rc
+vendor/lib64/com.fingerprints.extension@1.0.so
+vendor/lib64/hw/bix.fingerprint.default.so
+vendor/lib64/libree_bix_agent.so
+vendor/lib64/vendor.egistecbix.hardware.fingerprint@4.0.so
+
+# NFC (ST)
+vendor/bin/STFlashTool
+vendor/bin/hw/android.hardware.nfc@1.2-service.st
+vendor/etc/init/android.hardware.nfc@1.2-service.st.rc
+vendor/etc/init/hw/init.vendor.st21nfc.rc
+vendor/etc/libnfc-hal-st.conf
+vendor/etc/libnfc-nci-st.conf
+vendor/etc/st21nfc_conf_ds.txt
+vendor/etc/st21nfc_conf_ss.txt
+vendor/lib64/nfc_nci.st21nfc.st.so
+ 
+# NFC firmware (ST)
+vendor/firmware/st21nfc_fw.bin
+vendor/firmware/st21nfc_fw7.bin
+
+# Sensor configs
+vendor/etc/sensors/config/bengal_lsm6dso_0.json
+vendor/etc/sensors/config/bengal_qmc6308_0.json
+
+# Thermal
+vendor/etc/thermal-engine-devon.conf
+
+# Touchscreen firmware
+vendor/firmware/ILITEK_FW
+vendor/firmware/NT36xxx_MP_Setting_Criteria_6056.csv
+vendor/firmware/focaltech-txd-ft8726-02-0000-devon.bin
+vendor/firmware/tm_novatek_ts_fw.bin
+vendor/firmware/tm_novatek_ts_mp.bin
+
+# Touchscreen firmware (recovery)
+vendor/firmware/ILITEK_FW:recovery/root/vendor/firmware/ILITEK_FW
+vendor/firmware/focaltech-txd-ft8726-02-0000-devon.bin:recovery/root/vendor/firmware/focaltech-txd-ft8726-02-0000-devon.bin
+vendor/firmware/tm_novatek_ts_fw.bin:recovery/root/vendor/firmware/tm_novatek_ts_fw.bin
+vendor/firmware/tm_novatek_ts_mp.bin:recovery/root/vendor/firmware/tm_novatek_ts_mp.bin
